@@ -29,8 +29,6 @@ Cloudflare record back at `rami-khatib.github.io`, DNS-only, and the page is
 served again without anything of yours running. The `CNAME` file is what makes
 that work, so leave it.
 
-    TUNNEL_NETWORK=<cloudflared's network> docker compose up -d --build
-
 Publish nothing to Play until whichever one you choose actually answers: Play
 rejects a listing whose privacy policy URL does not load, and it re-checks on
 every update.
