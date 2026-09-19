@@ -1,0 +1,35 @@
+# Genie AI privacy policy - its own container on the data server.
+#
+# The Cloudflare tunnel reaches other services on this host by container name
+# (http://sakina-app:3000, http://aladin-tv-app:80 and so on), which only works
+# when this container sits on the same Docker network as cloudflared. That
+# network's name is set below and must match the one cloudflared is attached to.
+#
+# To find it:
+#     docker inspect -f '{{range $k,$v := .NetworkSettings.Networks}}{{$k}}{{"\n"}}{{end}}' <cloudflared-container>
+#
+# Then either edit `name:` under networks, or start this stack with
+#     TUNNEL_NETWORK=<that network> docker compose up -d
+
+services:
+  genie-privacy:
+    build: .
+    image: genie-privacy:latest
+    # The tunnel ingress rule points at http://genie-privacy:80, so this name is
+    # part of the configuration, not a label.
+    container_name: genie-privacy
+    restart: unless-stopped
+    networks:
+      - tunnel
+    # No ports are published. Nothing reaches this except through the tunnel,
+    # which is the same posture as every other service on this host.
+    logging:
+      driver: json-file
+      options:
+        max-size: "5m"
+        max-file: "3"
+
+networks:
+  tunnel:
+    external: true
+    name: ${TUNNEL_NETWORK:-cloudflared}
