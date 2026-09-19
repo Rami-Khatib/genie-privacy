@@ -16,20 +16,20 @@ that comes up blank without JS is one a reviewer cannot read.
 
 ## Two ways it can be served
 
-**GitHub Pages** (currently live). `CNAME` points the Pages site at
-`genie.aladin-tv.com`, and a DNS-only CNAME in Cloudflare points that name at
-`rami-khatib.github.io`. Nothing of yours has to be running.
+**A container on the data server** — this is what currently serves the page.
+`genie-privacy`, built from the `Dockerfile` here, on `shared-services-net` so
+the Cloudflare tunnel reaches it by name like every other service on that host.
+No ports are published. DNS for `genie.aladin-tv.com` points at the tunnel.
 
-**Your own container on the data server.** `Dockerfile`, `nginx.conf` and
-`docker-compose.yml` build a ~50 MB nginx image serving this one page, on the
-same Docker network as cloudflared so the tunnel can reach it by container
-name, exactly like the other services on that host.
+    TUNNEL_NETWORK=shared-services-net docker compose up -d --build
+
+**GitHub Pages** — still configured and still built, but no longer receiving
+traffic, because DNS moved to the tunnel. It stays as a fallback: point the
+Cloudflare record back at `rami-khatib.github.io`, DNS-only, and the page is
+served again without anything of yours running. The `CNAME` file is what makes
+that work, so leave it.
 
     TUNNEL_NETWORK=<cloudflared's network> docker compose up -d --build
-
-Then the tunnel needs an ingress rule `genie.aladin-tv.com -> http://genie-privacy:80`,
-and the Cloudflare DNS record has to change from `rami-khatib.github.io` to the
-tunnel (`<tunnel-id>.cfargotunnel.com`, proxied).
 
 Publish nothing to Play until whichever one you choose actually answers: Play
 rejects a listing whose privacy policy URL does not load, and it re-checks on
