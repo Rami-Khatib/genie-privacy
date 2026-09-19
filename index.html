@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy Policy — Genie AI</title>
+<meta name="description" content="What the Genie AI Android app collects, where it goes, and how to delete it.">
+<style>
+  :root{
+    --bg:#ffffff; --fg:#1a1a1a; --muted:#5b5b5b; --rule:#e3e3e3;
+    --accent:#8a5f10; --card:#faf8f4; --link:#8a5f10;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#121212; --fg:#ececec; --muted:#a3a3a3; --rule:#2c2c2c;
+      --accent:#e3ba6a; --card:#1b1b1b; --link:#e3ba6a;
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#121212; --fg:#ececec; --muted:#a3a3a3; --rule:#2c2c2c;
+    --accent:#e3ba6a; --card:#1b1b1b; --link:#e3ba6a;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0; background:var(--bg); color:var(--fg);
+    font:16px/1.7 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+    -webkit-text-size-adjust:100%;
+  }
+  .wrap{max-width:46rem; margin:0 auto; padding:2.5rem 16px 5rem}
+  header{border-bottom:1px solid var(--rule); padding-bottom:1.5rem; margin-bottom:2rem}
+  h1{font-size:1.75rem; margin:0 0 .4rem; letter-spacing:-.01em}
+  .sub{color:var(--muted); font-size:.95rem; margin:0}
+  h2{font-size:1.2rem; margin:2.5rem 0 .75rem; color:var(--accent)}
+  p{margin:0 0 1rem}
+  strong{font-weight:600}
+  a{color:var(--link)}
+  ul{margin:0 0 1rem; padding-inline-start:1.3rem}
+  li{margin-bottom:.5rem}
+  .note{background:var(--card); border:1px solid var(--rule); border-radius:10px; padding:1rem 1.15rem; margin:1.25rem 0}
+  .note p:last-child{margin-bottom:0}
+  footer{margin-top:3.5rem; padding-top:1.5rem; border-top:1px solid var(--rule); color:var(--muted); font-size:.9rem}
+  .langs{display:flex; gap:.5rem; margin:0 0 2rem}
+  .langs button{
+    font:inherit; font-size:.9rem; cursor:pointer; padding:.4rem .9rem; border-radius:999px;
+    border:1px solid var(--rule); background:transparent; color:var(--muted);
+  }
+  .langs button[aria-pressed="true"]{background:var(--accent); border-color:var(--accent); color:var(--bg); font-weight:600}
+  section[lang]{display:none}
+  html[data-lang="en"] section[lang="en"]{display:block}
+  html[data-lang="ar"] section[lang="ar"]{display:block; direction:rtl; text-align:right}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<div class="langs">
+  <button id="btn-en" aria-pressed="true">English</button>
+  <button id="btn-ar" aria-pressed="false">العربية</button>
+</div>
+
+<!-- ===================== ENGLISH ===================== -->
+<section lang="en">
+<header>
+  <h1>Privacy policy — Genie AI</h1>
+  <p class="sub">Last updated: 19 September 2026 · Contact: <a href="mailto:rami.tech85@gmail.com">rami.tech85@gmail.com</a></p>
+</header>
+
+<p>This describes what the Genie AI Android app collects, where it goes and how to get rid of it. It describes the app as it is built, not as it might be. If the app changes, this has to change with it.</p>
+
+<h2>What the app collects</h2>
+<ul>
+  <li><strong>What you say to it.</strong> Your typed messages and the transcripts of what you speak, along with Genie's replies.</li>
+  <li><strong>Your tasks and calendar events.</strong> Titles, descriptions, dates and categories, whether you typed them or Genie created them on your behalf.</li>
+  <li><strong>Pictures you attach.</strong> Only ones you pick yourself, and only when you attach them to a message.</li>
+  <li><strong>Your account.</strong> If you sign in, your email address and display name, from whichever method you used.</li>
+</ul>
+<p>The app does <strong>not</strong> collect your contacts, your location, your browsing, any advertising identifier, or anything at all in the background. It does not use analytics or advertising SDKs of any kind.</p>
+
+<h2>Where it goes</h2>
+<p><strong>On your phone.</strong> Conversations, tasks and upcoming events are stored locally so the app works without a connection.</p>
+<p><strong>In your own Supabase project.</strong> When you are signed in, conversations and tasks are also stored there so they follow you between devices. Row Level Security policies mean no other account can read them.</p>
+<p><strong>To Google, for answers.</strong> What you type or say — and any picture you attach — is sent to Google's Gemini so it can be answered. It goes through a server belonging to this app, which holds the API key; the key is not in the app. Google's handling of that data is covered by <a href="https://policies.google.com/privacy">Google's privacy policy</a> and the <a href="https://ai.google.dev/gemini-api/terms">Gemini API terms</a>.</p>
+
+<div class="note">
+<p><strong>Genie has no model that runs on your phone.</strong> Every answer involves sending your words to Google. The app says so on its own Data and privacy screen, and it is worth repeating here.</p>
+</div>
+
+<p><strong>Your calendar</strong> is read from and written to on the device only, through Android's calendar provider, with the permission you grant. Events are not sent anywhere except when you ask Genie about your schedule, in which case the relevant details go to Gemini with the question.</p>
+<p>Telnyx is used for voice calls <strong>only if you configure it yourself</strong> with your own credentials in settings. Nothing is sent to Telnyx otherwise.</p>
+
+<h2>What Google sign-in gives the app</h2>
+<p>The basic profile and email address, and nothing else. There are no sensitive or restricted scopes: the app cannot read your Gmail, your Drive, your Google Calendar, your contacts or anything else in your Google account.</p>
+
+<h2>Keeping and deleting</h2>
+<ul>
+  <li><strong>Turn off recording.</strong> Advanced settings has a switch for it. With it off, a request is answered and not written down — not on the device and not in your account.</li>
+  <li><strong>Set a retention period.</strong> Voice settings can delete conversations older than a chosen age, on the device and in your account together.</li>
+  <li><strong>Delete everything now.</strong> Settings → Data and privacy → Clear all history deletes every conversation from the device and from your account. If the account half fails, the app says so rather than pretending.</li>
+  <li><strong>Delete the account.</strong> Deleting your Supabase user deletes the tasks and conversations belonging to it, because both tables cascade on delete. Ask at the address above and it will be done.</li>
+</ul>
+
+<h2>Children</h2>
+<p>The app is not directed at children and does not knowingly collect anything from anyone under 13.</p>
+
+<h2>Security</h2>
+<p>Conversations in your account are protected by Row Level Security, so they are readable only by the account that created them. The connection to the app's server and to Google is over HTTPS. The Gemini key is held on the server and is not in the app, so it cannot be extracted from an installed copy.</p>
+<p>An optional app lock requires your fingerprint or face before Genie opens. It protects what is on the device; it is a screen lock and not encryption, and it does not protect anything stored on the server.</p>
+
+<h2>Changes</h2>
+<p>If what the app does with data changes, this document changes first. The date at the top says when it last did.</p>
+
+<footer>Genie AI · <a href="mailto:rami.tech85@gmail.com">rami.tech85@gmail.com</a></footer>
+</section>
+
+<!-- ===================== ARABIC ===================== -->
+<section lang="ar">
+<header>
+  <h1>سياسة الخصوصية — Genie AI</h1>
+  <p class="sub">آخر تحديث: ١٩ سبتمبر ٢٠٢٦ · للتواصل: <a href="mailto:rami.tech85@gmail.com">rami.tech85@gmail.com</a></p>
+</header>
+
+<p>هذه الصفحة تصف ما يجمعه تطبيق Genie AI لأندرويد، وإلى أين يذهب، وكيف تتخلّص منه. تصف التطبيق كما هو مبنيّ فعلاً، لا كما قد يكون. وإن تغيّر التطبيق، وجب أن تتغيّر معه.</p>
+
+<h2>ما يجمعه التطبيق</h2>
+<ul>
+  <li><strong>ما تقوله له.</strong> رسائلك المكتوبة ونصوص ما تنطقه، مع ردود Genie.</li>
+  <li><strong>مهامك وأحداث تقويمك.</strong> العناوين والأوصاف والتواريخ والتصنيفات، سواء كتبتها أنت أو أنشأها Genie نيابةً عنك.</li>
+  <li><strong>الصور التي ترفقها.</strong> تلك التي تختارها أنت فقط، وحين ترفقها برسالة فقط.</li>
+  <li><strong>حسابك.</strong> إن سجّلت الدخول: بريدك الإلكتروني واسم العرض، من الطريقة التي استعملتها.</li>
+</ul>
+<p>التطبيق <strong>لا</strong> يجمع جهات اتصالك، ولا موقعك، ولا تصفّحك، ولا أي معرّف إعلاني، ولا أي شيء في الخلفية إطلاقاً. ولا يستعمل أي حزمة تحليلات أو إعلانات من أي نوع.</p>
+
+<h2>إلى أين يذهب</h2>
+<p><strong>على هاتفك.</strong> المحادثات والمهام والأحداث القادمة تُحفظ محلياً ليعمل التطبيق دون اتصال.</p>
+<p><strong>في مشروع Supabase الخاص بك.</strong> عند تسجيل الدخول، تُحفظ المحادثات والمهام هناك أيضاً لتتبعك بين الأجهزة. وسياسات أمان الصفوف (RLS) تمنع أي حساب آخر من قراءتها.</p>
+<p><strong>إلى Google، للحصول على الأجوبة.</strong> ما تكتبه أو تقوله — وأي صورة ترفقها — يُرسَل إلى Gemini من Google للإجابة عليه. ويمرّ عبر خادم تابع لهذا التطبيق يحتفظ بمفتاح الـAPI؛ المفتاح ليس داخل التطبيق. وتعامل Google مع تلك البيانات تحكمه <a href="https://policies.google.com/privacy">سياسة خصوصية Google</a> و<a href="https://ai.google.dev/gemini-api/terms">شروط Gemini API</a>.</p>
+
+<div class="note">
+<p><strong>لا يملك Genie أي نموذج يعمل على هاتفك.</strong> كل إجابة تعني إرسال كلامك إلى Google. التطبيق يقول ذلك في شاشة «البيانات والخصوصية» الخاصة به، ويستحق التكرار هنا.</p>
+</div>
+
+<p><strong>تقويمك</strong> يُقرأ منه ويُكتب فيه على الجهاز وحده، عبر مزوّد التقويم في أندرويد، بالإذن الذي تمنحه. ولا تُرسَل الأحداث إلى أي مكان إلا حين تسأل Genie عن جدولك، فتذهب التفاصيل المعنيّة مع السؤال إلى Gemini.</p>
+<p>يُستعمل Telnyx للمكالمات الصوتية <strong>فقط إن أعددته أنت بنفسك</strong> ببياناتك في الإعدادات. ولا يُرسَل إليه شيء خلاف ذلك.</p>
+
+<h2>ماذا يمنح تسجيلُ الدخول بـGoogle للتطبيق</h2>
+<p>الملف الشخصي الأساسي وعنوان البريد، لا غير. لا توجد أي نطاقات وصول حسّاسة أو مقيّدة: التطبيق لا يستطيع قراءة بريدك في Gmail، ولا Drive، ولا تقويم Google، ولا جهات اتصالك، ولا أي شيء آخر في حسابك.</p>
+
+<h2>الحفظ والحذف</h2>
+<ul>
+  <li><strong>أوقف التسجيل.</strong> في الإعدادات المتقدمة مفتاح لذلك. وبإيقافه يُجاب طلبك ولا يُدوَّن — لا على الجهاز ولا في حسابك.</li>
+  <li><strong>حدّد مدة الاحتفاظ.</strong> إعدادات الصوت تستطيع حذف المحادثات الأقدم من عمر تختاره، على الجهاز وفي حسابك معاً.</li>
+  <li><strong>احذف كل شيء الآن.</strong> الإعدادات ← البيانات والخصوصية ← مسح كل السجل، يحذف كل محادثة من الجهاز ومن حسابك. وإن فشل نصفُ الحساب، يقول التطبيق ذلك بدل أن يتظاهر.</li>
+  <li><strong>احذف الحساب.</strong> حذف مستخدمك في Supabase يحذف المهام والمحادثات التابعة له، لأن الجدولين يحذفان تِبَعاً. اطلب ذلك على العنوان أعلاه ويُنفَّذ.</li>
+</ul>
+
+<h2>الأطفال</h2>
+<p>التطبيق غير موجَّه للأطفال، ولا يجمع عن علم أي شيء ممن هم دون الثالثة عشرة.</p>
+
+<h2>الأمان</h2>
+<p>المحادثات في حسابك محميّة بأمان الصفوف (RLS)، فلا يقرؤها إلا الحساب الذي أنشأها. والاتصال بخادم التطبيق وبـGoogle يجري عبر HTTPS. ومفتاح Gemini محفوظ على الخادم وليس في التطبيق، فلا يمكن استخراجه من نسخة مثبَّتة.</p>
+<p>قفل التطبيق الاختياري يطلب بصمتك أو وجهك قبل فتح Genie. وهو يحمي ما على الجهاز؛ إنه قفل شاشة لا تشفير، ولا يحمي شيئاً مخزَّناً على الخادم.</p>
+
+<h2>التغييرات</h2>
+<p>إن تغيّر ما يفعله التطبيق بالبيانات، تتغيّر هذه الوثيقة أولاً. والتاريخ في الأعلى يقول متى تغيّرت آخر مرة.</p>
+
+<footer>Genie AI · <a href="mailto:rami.tech85@gmail.com">rami.tech85@gmail.com</a></footer>
+</section>
+
+</div>
+<script>
+(function(){
+  var html = document.documentElement;
+  function set(lang){
+    html.setAttribute('data-lang', lang);
+    html.setAttribute('lang', lang);
+    html.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
+    document.getElementById('btn-en').setAttribute('aria-pressed', String(lang === 'en'));
+    document.getElementById('btn-ar').setAttribute('aria-pressed', String(lang === 'ar'));
+    try { localStorage.setItem('genie-privacy-lang', lang); } catch (e) {}
+  }
+  document.getElementById('btn-en').addEventListener('click', function(){ set('en'); });
+  document.getElementById('btn-ar').addEventListener('click', function(){ set('ar'); });
+  var saved = null;
+  try { saved = localStorage.getItem('genie-privacy-lang'); } catch (e) {}
+  if (saved !== 'ar' && saved !== 'en') {
+    saved = (navigator.language || '').slice(0, 2) === 'ar' ? 'ar' : 'en';
+  }
+  set(saved);
+})();
+</script>
+</body>
+</html>
